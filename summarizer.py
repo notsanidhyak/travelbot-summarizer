@@ -13,6 +13,10 @@ summ_model = genai.GenerativeModel('gemini-pro')
 
 app = FastAPI()
 
+@app.get("/home/")
+async def home():
+    return {"message": "Summarizer is live and working!"}
+
 @app.post('/traffic')
 async def traffic(data: dict):
     try:
